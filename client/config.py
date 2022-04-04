@@ -4,7 +4,7 @@ import sys
 import django
 
 
-TOKEN = '5295899996:AAER9kGkTypMyivcM11M2T6Skib1wgq5ZWw'
+TOKEN = '5140675106:AAHe5IaSOlAnjS4ExKJ7DL_qGZ2yHQP3hx8'
 
 PARENT_PACKAGE = '..'
 APP_PACKAGE = 'server'

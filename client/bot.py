@@ -32,11 +32,11 @@ def create_user(message) -> BotUser:
         chat_id=message.chat.id,
         first_name=message.chat.first_name,
         last_name=message.chat.last_name,
-        username_name=message.chat.username,
+        username=message.chat.username,
     )
 
 
-@bot.message_handler
+@bot.message_handler()
 def message_handler(message):
     chat_id = message.chat.id
     if not BotUser.objects.filter(chat_id=chat_id).exists():
@@ -45,6 +45,7 @@ def message_handler(message):
     user = BotUser.objects.get(chat_id=chat_id)
     if user.bot_state:
         state_handlers[user.bot_state](bot, message)
+        return
 
     for text, handler in message_handlers.items():
         if message.text == text:
@@ -58,7 +59,7 @@ def message_handler(message):
 
 
 callback_query_handlers = {
-    CallTypes.Language: handlers.language_call_query_handler,
+    CallTypes.Language: handlers.language_callback_query_handler,
 }
 
 

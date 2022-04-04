@@ -1,4 +1,3 @@
-from aiogram import Bot
 from telebot import TeleBot, types
 
 from backend.templates import Messages, Smiles, Keys

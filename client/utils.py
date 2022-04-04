@@ -9,8 +9,8 @@ from django.core.paginator import Page
 from bs4 import BeautifulSoup
 from bs4.element import NavigableString, Tag
 
-from bot import config
-from bot.call_types import CallTypes
+import config
+from call_types import CallTypes
 from backend.templates import Smiles
 
 
